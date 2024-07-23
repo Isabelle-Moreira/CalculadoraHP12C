@@ -33,7 +33,7 @@ public class calculadora extends AppCompatActivity {
 
     public void enter() {
         if (estadoAtual == editando) {
-            operandos.push((double) valorVisualizado);
+            operandos.push(valorVisualizado);
             estadoAtual = visualizando;
         }
     }
@@ -47,7 +47,7 @@ public class calculadora extends AppCompatActivity {
             double operando1 = operandos.pop();
             double resultado = operando1 + operando2;
             operandos.push(resultado);
-            valorVisualizado = (int) resultado;
+            valorVisualizado =  resultado;
             estadoAtual = visualizando;
         }
     }
@@ -61,7 +61,7 @@ public class calculadora extends AppCompatActivity {
             double operando1 = operandos.pop();
             double resultado = operando1 - operando2;
             operandos.push(resultado);
-            valorVisualizado = (int) resultado;
+            valorVisualizado = resultado;
             estadoAtual = visualizando;
         }
     }
@@ -75,7 +75,7 @@ public class calculadora extends AppCompatActivity {
             double operando1 = operandos.pop();
             double resultado = operando1 * operando2;
             operandos.push(resultado);
-            valorVisualizado = (int) resultado;
+            valorVisualizado = resultado;
             estadoAtual = visualizando;
         }
     }
@@ -90,7 +90,7 @@ public class calculadora extends AppCompatActivity {
             if (operando2 != 0) { // Proteção contra divisão por zero
                 double resultado = operando1 / operando2;
                 operandos.push(resultado);
-                valorVisualizado = (int) resultado;
+                valorVisualizado = resultado;
                 estadoAtual = visualizando;
             } else {
                 System.err.println("Erro: Divisão por zero!");
