@@ -1,83 +1,70 @@
 package com.example.calculadorahp12c;
-
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Optional;
+import java.util.function.BiFunction;
 
-public class calculadora extends AppCompatActivity {
+public class calculadora /*extends AppCompatActivity*/{
 
-    @Override
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calculadora);
         operandos = new ArrayDeque<>();
-    }
+    }*/
+
 
     private Deque<Double> operandos;
     private static final int editando = 0;
     private static final int visualizando = 1;
     private int estadoAtual;
-    private double valorVisualizado;
+    private String valorVisualizado;
 
+
+    public calculadora(){
+       estadoAtual =visualizando;
+       valorVisualizado="2";
+    }
+
+    public void setValores(String valor) {
+        if(estadoAtual==visualizando){
+            valorVisualizado ="";
+        }
+        estadoAtual=editando;
+        valorVisualizado+=valor;
+    }
 
     public double getValorVisualizado() {
-        return valorVisualizado;
+        return Double.parseDouble(valorVisualizado);
     }
 
     public void enter() {
         if (estadoAtual == editando) {
-            operandos.push(valorVisualizado);
+            operandos.push(Double.parseDouble(valorVisualizado));
             estadoAtual = visualizando;
         }
     }
+     public void executarOperacao(BiFunction<Double, Double,Double>operacao){
+         double operando2 = Optional.ofNullable(operandos.pollFirst()).orElse(0.0);
+         double operando1 = Optional.ofNullable(operandos.pollFirst()).orElse(0.0);
+         double resultado = operacao.apply(operando1,operando2);
+         operandos.push(resultado);
+         valorVisualizado =  String.valueOf(resultado);
+         estadoAtual = visualizando;
+     }
+
 
     public void soma() {
-        if (estadoAtual == editando) {
-            enter();
-        }
-        if (operandos.size() >= 2) {
-            double operando2 = operandos.pop();
-            double operando1 = operandos.pop();
-            double resultado = operando1 + operando2;
-            operandos.push(resultado);
-            valorVisualizado =  resultado;
-            estadoAtual = visualizando;
-        }
+        executarOperacao((operando1,operando2)-> operando1+operando2);
     }
 
     public void subtracao() {
-        if (estadoAtual == editando) {
-            enter();
-        }
-        if (operandos.size() >= 2) {
-            double operando2 = operandos.pop();
-            double operando1 = operandos.pop();
-            double resultado = operando1 - operando2;
-            operandos.push(resultado);
-            valorVisualizado = resultado;
-            estadoAtual = visualizando;
-        }
+
+        executarOperacao((operando1,operando2)-> operando1-operando2);
     }
 
     public void multiplicacao() {
-        if (estadoAtual == editando) {
-            enter();
-        }
-        if (operandos.size() >= 2) {
-            double operando2 = operandos.pop();
-            double operando1 = operandos.pop();
-            double resultado = operando1 * operando2;
-            operandos.push(resultado);
-            valorVisualizado = resultado;
-            estadoAtual = visualizando;
-        }
+        executarOperacao((operando1,operando2)-> operando1*operando2);
     }
 
     public void divisao() {
@@ -90,7 +77,7 @@ public class calculadora extends AppCompatActivity {
             if (operando2 != 0) { // Proteção contra divisão por zero
                 double resultado = operando1 / operando2;
                 operandos.push(resultado);
-                valorVisualizado = resultado;
+                valorVisualizado = String.valueOf(resultado);
                 estadoAtual = visualizando;
             } else {
                 System.err.println("Erro: Divisão por zero!");
@@ -99,3 +86,9 @@ public class calculadora extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
+
