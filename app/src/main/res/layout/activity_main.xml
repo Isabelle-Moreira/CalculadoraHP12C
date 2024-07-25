@@ -5,15 +5,170 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#515050"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/um12"
+        android:layout_width="59dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="#151414"
+        android:text="Enter"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/um9" />
+
+    <Button
+        android:id="@+id/um11"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#151414"
+        android:text="."
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um10"
+        app:layout_constraintStart_toStartOf="@+id/um7"
+        app:layout_constraintTop_toBottomOf="@+id/um7" />
+
+    <Button
+        android:id="@+id/um10"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/um8"
+        app:layout_constraintTop_toBottomOf="@+id/um8" />
+
+    <Button
+        android:id="@+id/um8"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um9"
+        app:layout_constraintTop_toBottomOf="@+id/um5" />
+
+    <Button
+        android:id="@+id/um9"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/um6" />
+
+    <Button
+        android:id="@+id/um7"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/um4"
+        app:layout_constraintTop_toBottomOf="@+id/um4" />
+
+    <Button
+        android:id="@+id/um6"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/um3" />
+
+    <Button
+        android:id="@+id/um5"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um6"
+        app:layout_constraintTop_toBottomOf="@+id/um" />
+
+    <Button
+        android:id="@+id/um4"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/um2"
+        app:layout_constraintTop_toBottomOf="@+id/um2" />
+
+    <Button
+        android:id="@+id/um3"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visor" />
+
+    <Button
+        android:id="@+id/um2"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visor" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/visor"
+        android:layout_width="339dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="24dp"
+        android:background="#B5AB8E"
+        android:text="0.00"
+        android:textAlignment="viewEnd"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/um"
+        android:layout_width="58dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#151414"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/um3"
+        app:layout_constraintTop_toBottomOf="@+id/visor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
