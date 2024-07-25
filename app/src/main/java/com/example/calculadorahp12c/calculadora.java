@@ -1,18 +1,10 @@
 package com.example.calculadorahp12c;
 import java.util.Deque;
+import java.util.ArrayDeque;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-public class calculadora /*extends AppCompatActivity*/{
-
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_calculadora);
-        operandos = new ArrayDeque<>();
-    }*/
-
+public class calculadora {
 
     private Deque<Double> operandos;
     private static final int editando = 0;
@@ -22,8 +14,10 @@ public class calculadora /*extends AppCompatActivity*/{
 
 
     public calculadora(){
-       estadoAtual =visualizando;
-       valorVisualizado="2";
+
+        operandos = new ArrayDeque<>();
+        estadoAtual =visualizando;
+        valorVisualizado="2";
     }
 
     public void setValores(String valor) {
@@ -37,6 +31,7 @@ public class calculadora /*extends AppCompatActivity*/{
     public double getValorVisualizado() {
         return Double.parseDouble(valorVisualizado);
     }
+
 
     public void enter() {
         if (estadoAtual == editando) {
@@ -80,7 +75,10 @@ public class calculadora /*extends AppCompatActivity*/{
                 valorVisualizado = String.valueOf(resultado);
                 estadoAtual = visualizando;
             } else {
+                    operandos.push(operando1);
+                    operandos.push(operando2);
                 System.err.println("Erro: Divisão por zero!");
+                valorVisualizado ="0";
             }
         }
     }
