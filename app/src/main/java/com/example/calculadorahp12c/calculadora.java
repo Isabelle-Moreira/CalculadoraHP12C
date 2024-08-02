@@ -7,9 +7,9 @@ import java.util.function.BiFunction;
 public class calculadora {
 
     private Deque<Double> operandos;
-    private static final int editando = 0;
-    private static final int visualizando = 1;
-    private int estadoAtual;
+    public static final int editando = 0;
+    public static final int visualizando = 1;
+    public int estadoAtual;
     private String valorVisualizado;
 
 

@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/visor" />
 
     <Button
-        android:id="@+id/um12"
+        android:id="@+id/enter"
         android:layout_width="59dp"
         android:layout_height="177dp"
         android:layout_marginTop="24dp"
@@ -118,7 +118,7 @@
         android:text="."
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/um12"
+        app:layout_constraintEnd_toStartOf="@+id/enter"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/dois"
         app:layout_constraintTop_toBottomOf="@+id/dois" />
@@ -237,7 +237,6 @@
         android:layout_height="74dp"
         android:layout_marginTop="68dp"
         android:background="#B5AB8E"
-        android:text="0.00"
         android:textAlignment="viewEnd"
         android:textColor="#000000"
         android:textColorLink="#FDFCFC"
