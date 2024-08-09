@@ -10,16 +10,79 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/n"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#010124"
+        android:text="n"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/clear"
+        app:layout_constraintStart_toEndOf="@+id/i"
+        app:layout_constraintTop_toBottomOf="@+id/pmt" />
+
+    <Button
+        android:id="@+id/i"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#010124"
+        android:text="i"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fv"
+        app:layout_constraintTop_toBottomOf="@+id/pmt" />
+
+    <Button
+        android:id="@+id/pmt"
+        android:layout_width="92dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#010124"
+        android:text="PMT"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/pv"
+        app:layout_constraintTop_toBottomOf="@+id/enter" />
+
+    <Button
+        android:id="@+id/fv"
+        android:layout_width="75dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#010124"
+        android:text="FV"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/pv"
+        app:layout_constraintTop_toBottomOf="@+id/pv" />
+
+    <Button
+        android:id="@+id/pv"
+        android:layout_width="75dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="#010124"
+        android:text="PV"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter" />
+
+    <Button
         android:id="@+id/clear"
         android:layout_width="100dp"
         android:layout_height="68dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="15dp"
-        android:backgroundTint="#151414"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#DAC04D29"
         android:text="Clear"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/soma"
         app:layout_constraintTop_toBottomOf="@+id/soma" />
 
     <Button
@@ -85,10 +148,10 @@
     <Button
         android:id="@+id/enter"
         android:layout_width="59dp"
-        android:layout_height="177dp"
+        android:layout_height="140dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="116dp"
-        android:backgroundTint="#151414"
+        android:backgroundTint="#000000"
         android:text="Enter"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -222,12 +285,12 @@
         android:layout_height="68dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="52dp"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="#151414"
         android:text="7"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/oito"
-        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/visor" />
 

@@ -40,6 +40,9 @@ public class calculadora {
         }
     }
      public void executarOperacao(BiFunction<Double, Double,Double>operacao){
+         if(estadoAtual==editando){
+             enter();
+         }
          double operando2 = Optional.ofNullable(operandos.pollFirst()).orElse(0.0);
          double operando1 = Optional.ofNullable(operandos.pollFirst()).orElse(0.0);
          double resultado = operacao.apply(operando1,operando2);

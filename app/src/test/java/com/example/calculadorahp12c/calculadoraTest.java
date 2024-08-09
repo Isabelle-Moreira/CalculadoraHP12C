@@ -59,4 +59,18 @@ public class calculadoraTest {
         assertEquals(0.0, calculadora.getValorVisualizado(), 0.001);
     }
 
+    @Test
+    public void testSomatres() {
+        calculadora.setValores("2");
+        calculadora.enter();
+        calculadora.setValores("2");
+        calculadora.enter();
+        calculadora.setValores("2");
+        calculadora.soma();
+        calculadora.soma();
+        assertEquals(6.0, calculadora.getValorVisualizado(), 0.001);
+    }
+
+
+
 }
