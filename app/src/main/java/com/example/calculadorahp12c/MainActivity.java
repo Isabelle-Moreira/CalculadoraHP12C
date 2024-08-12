@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private Button botaoSubtracao;
     private Button botaoSoma;
     private EditText Visor;
+    private Button pv;
+    private Button pmt;
+    private Button fv;
+    private Button i;
+
+    private Button n;
+
+
     calculadora calculadora;
 
     @Override
@@ -60,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
         botaoMultiplicacao = findViewById(R.id.multiplicacao);
         botaoSubtracao = findViewById(R.id.subtracao);
         botaoSoma = findViewById(R.id.soma);
-
+        pv =findViewById(R.id.pv);
+        pmt =findViewById(R.id.pmt);
+        fv =findViewById(R.id.fv);
+        i =findViewById(R.id.i);
+        n =findViewById(R.id.n);
 
 
         botaoZero.setOnClickListener(ClicaNumero("0"));
@@ -98,10 +110,11 @@ public class MainActivity extends AppCompatActivity {
         botaoSubtracao.setOnClickListener(ClicaSubtracao());
         botaoSoma.setOnClickListener(ClicaSoma());
 
-
-
-
-
+        pv.setOnClickListener(ClicaPV());
+        pmt.setOnClickListener(ClicaPMT());
+        fv.setOnClickListener(ClicaFV());
+        i.setOnClickListener(ClicaI());
+        n.setOnClickListener(ClicaN());
         }
 
 
@@ -148,8 +161,36 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-
-
+    public View.OnClickListener ClicaPV(){
+        return(v) ->{
+            calculadora.inserePv();
+            Visor.setText( String.valueOf(calculadora.getValorVisualizado()));
+        };
+    }
+    public View.OnClickListener ClicaPMT(){
+        return(v) ->{
+            calculadora.inserePmt();
+            Visor.setText( String.valueOf(calculadora.getValorVisualizado()));
+        };
+    }
+    public View.OnClickListener ClicaFV(){
+        return(v) ->{
+            calculadora.insereFv();
+            Visor.setText( String.valueOf(calculadora.getValorVisualizado()));
+        };
+    }
+    public View.OnClickListener ClicaI(){
+        return(v) ->{
+            calculadora.insereI();
+            Visor.setText( String.valueOf(calculadora.getValorVisualizado()));
+        };
+    }
+    public View.OnClickListener ClicaN(){
+        return(v) ->{
+            calculadora.insereN();
+            Visor.setText( String.valueOf(calculadora.getValorVisualizado()));
+        };
+    }
 
 
 

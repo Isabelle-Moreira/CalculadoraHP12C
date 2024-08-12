@@ -11,10 +11,19 @@ public class calculadora {
     public static final int visualizando = 1;
     public int estadoAtual;
     private String valorVisualizado;
+    public double PV;
+    public double PMT;
+    public double FV;
+    public double i;
+    public double n;
 
 
     public calculadora(){
-
+        PV=0;
+        PMT=1;
+        FV=0;
+        i =0;
+        n= 1;
         operandos = new ArrayDeque<>();
         estadoAtual =visualizando;
         valorVisualizado="2";
@@ -32,6 +41,68 @@ public class calculadora {
         return Double.parseDouble(valorVisualizado);
     }
 
+    public void inserePv(){
+        if(estadoAtual==editando){
+            PV = Double.parseDouble(valorVisualizado);
+            estadoAtual=visualizando;
+        }else {
+            CalculaPV();
+        }
+    }
+    public void insereFv(){
+        if(estadoAtual==editando){
+            FV = Double.parseDouble(valorVisualizado);
+            estadoAtual=visualizando;
+        }else{
+            CalculaFV();
+        }
+    }
+    public void insereI(){
+        if(estadoAtual==editando){
+            i = Double.parseDouble(valorVisualizado);
+            estadoAtual=visualizando;
+        }else{
+            CalculaI();
+        }
+    }
+    public void insereN(){
+        if(estadoAtual==editando){
+            n = Double.parseDouble(valorVisualizado);
+            estadoAtual=visualizando;
+        }else {
+            CalculaN();
+        }
+    }
+    public void inserePmt(){
+        if(estadoAtual==editando){
+            PMT = Double.parseDouble(valorVisualizado);
+            estadoAtual=visualizando;
+        }else{
+            CalculaPMT();
+        }
+    }
+
+    public void CalculaPV(){
+        PV = (FV / Math.pow((1+i),n));
+        valorVisualizado = Double.toString(PV);
+    }
+    public void CalculaPMT(){
+        PMT = PV*((Math.pow((1+i),n)*i)/(Math.pow((1+i),n)-1));
+        valorVisualizado = Double.toString(PMT);
+    }
+
+    public void CalculaFV(){
+        FV = ( PV * Math.pow((1+i),n));
+        valorVisualizado = Double.toString(FV);
+    }
+    public void CalculaI(){
+        i = (Math.pow((FV / PV), (1.0 / n)) - 1);
+        valorVisualizado = Double.toString(i);
+    }
+    public void CalculaN(){
+        n = (Math.log(FV / PV) / Math.log(1 + i));
+        valorVisualizado = Double.toString(n);
+    }
 
     public void enter() {
         if (estadoAtual == editando) {
