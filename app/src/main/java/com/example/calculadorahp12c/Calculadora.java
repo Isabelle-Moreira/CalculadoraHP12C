@@ -1,10 +1,11 @@
 package com.example.calculadorahp12c;
+import androidx.lifecycle.ViewModel;
 import java.util.Deque;
 import java.util.ArrayDeque;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-public class calculadora {
+public class Calculadora extends ViewModel {
 
     private Deque<Double> operandos;
     public static final int editando = 0;
@@ -18,7 +19,7 @@ public class calculadora {
     public double n;
 
 
-    public calculadora(){
+    public Calculadora(){
         PV=0;
         PMT=1;
         FV=0;

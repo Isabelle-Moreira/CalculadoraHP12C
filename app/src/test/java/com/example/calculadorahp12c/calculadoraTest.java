@@ -2,13 +2,13 @@ package com.example.calculadorahp12c;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import java.util.ArrayDeque;
+
 public class calculadoraTest {
-    private calculadora calculadora;
+    private Calculadora calculadora;
 
     @Before
     public void setUp() {
-        calculadora = new calculadora();
+        calculadora = new Calculadora();
     }
 
     @Test

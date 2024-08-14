@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 public class MainActivity extends AppCompatActivity {
     private Button botaoZero;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button n;
 
 
-    calculadora calculadora;
+    Calculadora calculadora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,8 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        calculadora = new calculadora();
-
+        calculadora = new ViewModelProvider(this).get(Calculadora.class);
         Enter.setOnClickListener(v -> {
             calculadora.enter();
             Visor.setText(" ");
